@@ -12,7 +12,7 @@ function PostDetail() {
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
   const fetchData = async () => {
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from("posts")
       .select("*")
       .eq("id", id)
@@ -22,7 +22,7 @@ function PostDetail() {
   };
 
   const fetchComments = async () => {
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from("comments")
       .select("*")
       .eq("post_id", id);

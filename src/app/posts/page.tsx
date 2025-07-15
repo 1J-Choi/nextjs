@@ -11,7 +11,7 @@ function Posts() {
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = async () => {
-    let { data: posts, error } = await supabase.from("posts").select("*");
+    const { data: posts } = await supabase.from("posts").select("*");
     setPosts(posts ?? []);
     setIsLoading(false);
   };
